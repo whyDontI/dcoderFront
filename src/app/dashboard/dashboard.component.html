@@ -1,0 +1,14 @@
+<div class="form-group">
+	<input type="text" class="col-6" [(ngModel)] = searchTerm class="form-control" id="search" placeholder="Search">
+</div>
+<div class="row">
+	<div class="card col-4" style="width: 18rem;" *ngFor="let item of threads.threads | search: searchTerm">
+		<div class="card-body">
+			<h5 class="card-title">{{item.title}}</h5>
+			<p class="card-text">{{item.description}}</p>
+			<span class="badge badge-pill badge-primary" *ngFor="let tag of item.tags">{{tag}}</span>
+			<!-- <a href="#" class="card-link">Card link</a> -->
+			<!-- <a href="#" class="card-link">Another link</a> -->
+		</div>
+	</div>
+</div>

@@ -59,6 +59,7 @@
           "options": {
             "browserTarget": "dcoder-challenge:build"
           },
+          
           "configurations": {
             "production": {
               "browserTarget": "dcoder-challenge:build:production"
