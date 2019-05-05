@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Thread } from '../models/thread';
+import { Response } from '../models/Response';
 import { DataService } from '../Services/data.service';
 import { AuthService } from '../Services/auth.service';
 import { first } from 'rxjs/operators';
@@ -17,8 +18,8 @@ export class DashboardComponent implements OnInit {
     constructor(private dataService: DataService) { }
 
     ngOnInit() {
-        this.dataService.getAllThreads().pipe(first()).subscribe(threads => {
-            this.threads = threads;
+        this.dataService.getAllThreads().pipe(first()).subscribe(data => {
+            this.threads = data.threads;
         });
 
         // this.dataService.getOneThread().subscribe(thread => {

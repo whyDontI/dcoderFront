@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { User } from '../models/user';
 import { Thread } from '../models/thread';
+import { Response } from '../models/Response';
 import { environment } from '../../environments/environment'
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,7 @@ export class DataService {
 
     getAllThreads() {
         let email = this.email;
-        return this.http.get<Thread[]>(`${this.env.apiUrl}/thread/` + email);
+        return this.http.get<Response>(`${this.env.apiUrl}/thread/` + email);
     }
 
     getOneThread(id){
