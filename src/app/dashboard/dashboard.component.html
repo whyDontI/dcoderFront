@@ -2,7 +2,7 @@
 	<input type="text" class="col-6" [(ngModel)] = searchTerm class="form-control" id="search" placeholder="Search">
 </div>
 <div class="row">
-	<div class="card col-4" style="width: 18rem;" *ngFor="let item of threads.threads | search: searchTerm">
+	<div class="card col-4" style="width: 18rem;" *ngFor="let item of threads | search: searchTerm">
 		<div class="card-body">
 			<h5 class="card-title">{{item.title}}</h5>
 			<p class="card-text">{{item.description}}</p>
